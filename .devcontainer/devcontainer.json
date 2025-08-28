@@ -1,0 +1,20 @@
+{
+  "name": "Java 17 (Minimal)",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "java.configuration.checkProjectSettingsExclusions": false
+      }
+    }
+  },
+  "postCreateCommand": "java -version && mvn -version",
+  "remoteUser": "vscode"
+}

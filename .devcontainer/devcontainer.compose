@@ -1,0 +1,25 @@
+{
+  "name": "Java 17 + Postgres (Compose)",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "api",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-azuretools.vscode-docker",
+        "cweijan.vscode-postgresql-client2"
+      ]
+    }
+  },
+  "forwardPorts": [8080, 5432],
+  "portsAttributes": {
+    "8080": { "label": "API" },
+    "5432": { "label": "Postgres" }
+  },
+  "postCreateCommand": "java -version && mvn -version",
+  "remoteUser": "vscode"
+}
