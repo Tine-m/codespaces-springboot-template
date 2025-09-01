@@ -1,20 +1,14 @@
 {
-  "name": "Java 17 (Minimal)",
-  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "name": "Java 17 + Maven (Codespaces)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {}
+    "ghcr.io/devcontainers/features/java:1": { "version": "17" },
+    "ghcr.io/devcontainers/features/maven:1": { "version": "latest" }
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "vscjava.vscode-java-pack",
-        "ms-azuretools.vscode-docker"
-      ],
-      "settings": {
-        "java.configuration.checkProjectSettingsExclusions": false
-      }
+      "extensions": ["vscjava.vscode-java-pack"]
     }
   },
-  "postCreateCommand": "java -version && mvn -version",
-  "remoteUser": "vscode"
+  "postCreateCommand": "java -version && mvn -version"
 }
